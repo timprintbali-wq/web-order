@@ -1,0 +1,6 @@
+{
+  "name": "Web Order Bounty HQ",
+  "description": "Operational dashboard & gamified bounty management platform for Bali Printing Center (BPC) Web Order division.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

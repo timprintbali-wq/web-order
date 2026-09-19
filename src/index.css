@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f1f5f9;
+    --color-surface-card: #ffffff;
+    --color-border: #cbd5e1;
+    --color-border-highlight: #94a3b8;
+    
+    /* Semantic Typography Tokens */
+    --text-primary: #0f172a;
+    --color-text: #0f172a;
+    --text-secondary: #334155;
+    --color-text-secondary: #334155;
+    --text-muted: #475569;
+    --color-text-muted: #475569;
+    --text-disabled: #94a3b8;
+    --text-on-primary: #ffffff;
+    --text-on-dark: #ffffff;
+    --text-on-dark-secondary: #e2e8f0;
+    --text-on-dark-muted: #cbd5e1;
+    --text-on-card: #0f172a;
+    --text-accent: #f97316;
+    --text-success: #059669;
+    --text-warning: #d97706;
+    --text-danger: #e11d48;
+
+    /* Brand & Accent Colors */
+    --color-primary: #f97316;
+    --color-primary-hover: #ea580c;
+    --color-primary-text: #ffffff;
+    --color-secondary: #6366f1;
+    --color-secondary-hover: #4f46e5;
+    --color-gold: #d97706;
+    --color-emerald: #059669;
+    --color-rose: #e11d48;
+    --color-progress-track: #e2e8f0;
+    --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom design token utility mappings */
+.bg-app {
+  background-color: var(--color-bg);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-alt {
+  background-color: var(--color-surface-alt);
+}
+
+.border-theme {
+  border-color: var(--color-border);
+}
+
+.border-theme-highlight {
+  border-color: var(--color-border-highlight);
+}
+
+/* Semantic Typography Classes */
+.text-theme,
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary,
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-muted,
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-on-dark {
+  color: var(--text-on-dark);
+}
+
+.text-on-dark-secondary {
+  color: var(--text-on-dark-secondary);
+}
+
+.text-on-dark-muted {
+  color: var(--text-on-dark-muted);
+}
+
+.text-theme-accent,
+.text-accent {
+  color: var(--text-accent);
+}
+
+.text-theme-success,
+.text-success {
+  color: var(--text-success);
+}
+
+.text-theme-warning,
+.text-warning {
+  color: var(--text-warning);
+}
+
+.text-theme-danger,
+.text-danger {
+  color: var(--text-danger);
+}
+
+.bg-theme-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+.bg-theme-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.text-theme-primary {
+  color: var(--color-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-theme-gold {
+  color: var(--color-gold);
+}
+
+.bg-theme-gold {
+  background-color: var(--color-gold);
+}
+
+.text-theme-emerald {
+  color: var(--color-emerald);
+}
+
+.bg-theme-emerald {
+  background-color: var(--color-emerald);
+}
+
+.text-theme-rose {
+  color: var(--color-rose);
+}
+
+.bg-theme-rose {
+  background-color: var(--color-rose);
+}
+
+.bg-progress-track {
+  background-color: var(--color-progress-track);
+}
+
+.card-theme {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 1.25rem;
+}
+
+.card-theme-alt {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+/* Subtle Duolingo/RPG bounce and pulse */
+@keyframes coinSparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(12deg); }
+}
+
+.animate-coin {
+  animation: coinSparkle 2.5s ease-in-out infinite;
+}
+
+/* Rarity Animation Effects */
+@keyframes divinePulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.4), inset 0 0 10px rgba(251, 191, 36, 0.3);
+    border-color: rgba(249, 115, 22, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.7), inset 0 0 15px rgba(251, 191, 36, 0.5);
+    border-color: rgba(251, 191, 36, 1);
+  }
+}
+
+@keyframes transcendedLightning {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  20% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), inset 0 0 14px rgba(255, 255, 255, 0.6);
+  }
+  40% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 9px rgba(255, 255, 255, 0.3);
+  }
+  60% {
+    box-shadow: 0 0 28px rgba(255, 255, 255, 0.9), inset 0 0 16px rgba(255, 255, 255, 0.7);
+  }
+  80% {
+    background-position: 50% 50%;
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.animate-divine-glow {
+  animation: divinePulse 3s ease-in-out infinite;
+}
+
+.animate-transcended-glow {
+  animation: transcendedLightning 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-coin,
+  .animate-divine-glow,
+  .animate-transcended-glow {
+    animation: none;
+  }
+}
+
+/* Universal Form Controls & Dropdown Contrast Fixes */
+select {
+  background-color: var(--color-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 600;
+}
+
+select option {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+html.dark select option,
+.dark select option {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-highlight);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
